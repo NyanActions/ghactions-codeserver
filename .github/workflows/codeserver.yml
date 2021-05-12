@@ -26,4 +26,4 @@ jobs:
         run: nohup code-server --port 13337 --auth none --disable-telemetry &
      
       - name: tunnel cloudflared
-        run: ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 --metrics localhost:45678
+        run: echo "hi" && ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 --metrics localhost:45678
