@@ -14,7 +14,7 @@ jobs:
 
       - name: Install cloudflared
         run: |
-          curl https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.tgz
+          wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.tgz
           tar -xvzf cloudflared-stable-linux-amd64.tgz -C cfd
 
       - name: Install codeserver
