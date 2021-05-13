@@ -28,7 +28,5 @@ jobs:
       - name: tunnel cloudflared
         run: nohup ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 &
 
-      - name: cat log # first I need to know log file
-        run: |
-          sleep 10s
-          ls -lf cfd
+      - name: slepe 6h
+        run: sleep 6h
