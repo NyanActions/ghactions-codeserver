@@ -25,7 +25,7 @@ jobs:
       - name: run codeserver
         run: nohup code-server --port 13337 --auth password --disable-telemetry &
         env:
-          PASSWORD: {{ secrets.PASSWD }}
+          PASSWORD: ${{ secrets.PASSWD }}
 
       - name: tunnel cloudflared
         run: nohup ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 &
