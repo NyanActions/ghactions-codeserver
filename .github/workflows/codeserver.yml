@@ -26,4 +26,9 @@ jobs:
         run: nohup code-server --port 13337 --auth none --disable-telemetry &
      
       - name: tunnel cloudflared
-        run: echo "hi" && ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 --metrics localhost:45678
+        run: nohup ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 &
+
+      - name: cat log # first I need to know log file
+        run: |
+          sleep 10s
+          ls -lf cfd
