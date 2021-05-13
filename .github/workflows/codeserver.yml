@@ -23,7 +23,7 @@ jobs:
         run: curl -fsSL https://code-server.dev/install.sh | sh
 
       - name: run codeserver
-        run: nohup code-server --port 13337 --auth none --disable-telemetry &
+        run: nohup code-server --port 13337 --auth ${{ secrets.PASSWD }} --disable-telemetry &
      
       - name: tunnel cloudflared
         run: nohup ./cfd/cloudflared tunnel --url http://127.0.0.1:13337 &
